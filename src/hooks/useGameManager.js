@@ -17,7 +17,8 @@ export default function useGameManager() {
 
   const setGameAsStarted = useCallback(() => {
     setGameHasStarted(true);
-    setGameHasBeenWon(false);
+    setGameHasBeenWon(null);
+    setGameHasBeenLost(null);
   }, []);
 
   return {
