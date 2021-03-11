@@ -44,9 +44,11 @@ function createInitialBoardState({ height, width, numberOfBadSquares }) {
         .map((i) => column + i)
         .filter((r) => r >= 0 && r < width);
 
-      rowsToUpdate.forEach((row) => {
-        columnsToUpdate.forEach((column) => {
-          board[row][column].neighbour++;
+      rowsToUpdate.forEach((rowToUpdate) => {
+        columnsToUpdate.forEach((columnToUpdate) => {
+          if (!(row === rowToUpdate && column === columnToUpdate)) {
+            board[rowToUpdate][columnToUpdate].neighbour++;
+          }
         });
       });
 
