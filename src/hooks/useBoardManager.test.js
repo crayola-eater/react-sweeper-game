@@ -62,7 +62,7 @@ describe("useBoardManager hook initial state", () => {
                   board[square.row + rowOffset]?.[square.column + columnOffset]
               );
             })
-            .filter((neighbour) => neighbour?.isBad && neighbour !== square);
+            .filter((neighbour) => neighbour?.isBad);
           expect(badNeighbours).toHaveLength(square.neighbour);
         });
     });
